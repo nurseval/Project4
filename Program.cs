@@ -1,20 +1,32 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using System;
 
-try
+namespace hatayonetimi
 {
-    int a = int.Parse(Console.ReadLine());
+    class Program
+    {
 
-    int b = int.Parse(Console.ReadLine());
+        static void Main(string[]args)
+        {
+            try
+           {
+                Console.WriteLine("Bir sayı giriniz:");
+                int sayi= Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Girmiş olduğunuz sayı"+ sayi);
+            }
 
-    int c = a+b;
+            catch(Exception ex)
 
-    Console.WriteLine(c);
+            {
+                Console.WriteLine("Hata:"+ ex.Message.ToString());
+            }
+
+            finally
+            {
+                Console.Write("İşlem tamamlandı.");
+            }
+            Console.ReadKey();
+        }
+    }
 }
-catch(Exception ex)
-{
-    Console.WriteLine("Bir Hata Oluştu: "+ ex.Message);
-}
-finally
-{
-    Console.WriteLine("İşlem tamamlandı.");
-}
+    
+
